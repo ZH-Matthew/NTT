@@ -1,9 +1,14 @@
 package com.example.ntt.model;
 import jakarta.persistence.*;
 import lombok.*;
+import java.util.ArrayList;
+import java.util.List;
 
-import java.util.Set;
-
+/**
+ * @code
+ * Organization model <p>
+ * Has a one-to-one relationship with the {@link Ceo} and a one-to-many relationship with {@link BranchOrganization}
+ */
 @Getter
 @Setter
 @Entity
@@ -31,8 +36,9 @@ public class Organization {
     @JoinColumn(name = "ceo_id")
     private Ceo ceo;
 
-    @OneToMany(mappedBy = "organization", fetch = FetchType.LAZY)
-    private Set<BranchOrganization> branchOrganizations;
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true , fetch = FetchType.LAZY)
+    @JoinColumn(name = "organization_id")
+    private List<BranchOrganization> branchOrganizations = new ArrayList<>();
 
 
 }

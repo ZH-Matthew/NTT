@@ -7,6 +7,11 @@ import jakarta.persistence.Id;
 import lombok.*;
 
 import java.sql.Date;
+/**
+ * @code
+ * Branch manager model <p>
+ * Has a one-to-one relationship with the {@link BranchManager}
+ */
 @Getter
 @Setter
 @Entity

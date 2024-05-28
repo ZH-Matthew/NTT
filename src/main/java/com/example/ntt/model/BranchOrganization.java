@@ -2,7 +2,11 @@ package com.example.ntt.model;
 
 import jakarta.persistence.*;
 import lombok.*;
-
+/**
+ * @code
+ * Organization branch model <p>
+ * Has a one-to-one relationship with the {@link BranchManager}
+ */
 @Getter
 @Setter
 @Entity
@@ -19,9 +23,5 @@ public class BranchOrganization {
 
     @OneToOne
     private BranchManager branchManager;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "organization_id")
-    private Organization organization;
 
 }

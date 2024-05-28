@@ -5,7 +5,10 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.*;
 import java.sql.Date;
-
+/**
+ * @code
+ * CEO model <p>
+ */
 @Getter
 @Setter
 @Entity
