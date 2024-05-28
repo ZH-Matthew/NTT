@@ -51,7 +51,7 @@ public class GeneralController {
      * @param filter a string or part of a string that may be contained in the short name of the organization
      * @return List {@link Organization}
      */
-    @GetMapping("/byFilter/{filter}")
+    @GetMapping("/all/{filter}")
     public ResponseEntity<Collection<Organization>> getAllFilterOrganization(@PathVariable String filter) {
         List<Organization> allFilterOrganization = service.getFilterOrganizations(filter);
         if (allFilterOrganization.isEmpty()) {
