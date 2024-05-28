@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - include:
+      file: liquibase/scripts/branch_manager.sql
+  - include:
+      file: liquibase/scripts/ceo.sql
+  - include:
+      file: liquibase/scripts/organization.sql
+  - include:
+      file: liquibase/scripts/branch_organization.sql
+
