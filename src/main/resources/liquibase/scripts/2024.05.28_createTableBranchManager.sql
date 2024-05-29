@@ -1,16 +1,16 @@
 -- liquibase formatted sql
 
 -- changeset mzhitenev:1
-CREATE TABLE branch_manager
+CREATE TABLE Branch_manager
 (
-    id          BIGSERIAL PRIMARY KEY,
+    id           UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     first_name   VARCHAR(255),
     last_name    VARCHAR(255),
     sur_name     VARCHAR(255),
     birth_day    DATE
 );
 
-INSERT INTO branch_manager (first_name,last_name,sur_name,birth_day)
+INSERT INTO Branch_manager (first_name,last_name,sur_name,birth_day)
 VALUES
     ('Raya Todd','India Wilkinson','Davenport','Jun 17, 2023'),
     ('Xyla Atkins','Jayme Decker','Ford','Sep 5, 2024'),
@@ -22,7 +22,7 @@ VALUES
     ('Shana Carey','Juliet Figueroa','Patton','Sep 14, 2024'),
     ('Kiayada York','Wendy Malone','Richard','Jul 23, 2023'),
     ('Reagan Schmidt','Lysandra Campos','Montgomery','Feb 13, 2025');
-INSERT INTO branch_manager (first_name,last_name,sur_name,birth_day)
+INSERT INTO Branch_manager (first_name,last_name,sur_name,birth_day)
 VALUES
     ('Sopoline Silva','Giselle Marshall','Hutchinson','May 17, 2024'),
     ('Jolie Houston','Shafira Carroll','Pollard','Nov 12, 2023'),
@@ -34,7 +34,7 @@ VALUES
     ('Christen Travis','Geraldine Joyce','Lawson','Oct 8, 2023'),
     ('Clio Richardson','Briar Stewart','Joseph','Jun 13, 2024'),
     ('Amy Mann','Alana Tyler','Sharp','May 17, 2025');
-INSERT INTO branch_manager (first_name,last_name,sur_name,birth_day)
+INSERT INTO Branch_manager (first_name,last_name,sur_name,birth_day)
 VALUES
     ('Brielle Ruiz','Nevada Newman','Greer','Aug 1, 2024'),
     ('Aline Hardy','Iris Washington','Stafford','Aug 17, 2024'),
@@ -46,7 +46,7 @@ VALUES
     ('Isabella Dunlap','Inga Ashley','Head','Feb 8, 2025'),
     ('Melissa Dorsey','Alexandra Thomas','Crawford','Jun 18, 2024'),
     ('Shafira Padilla','Hope Reyes','Sargent','Jan 7, 2025');
-INSERT INTO branch_manager (first_name,last_name,sur_name,birth_day)
+INSERT INTO Branch_manager (first_name,last_name,sur_name,birth_day)
 VALUES
     ('Audra Shields','Hedy Hull','Cross','Dec 15, 2023'),
     ('Brianna Mcconnell','Kathleen Kent','Sharp','Dec 6, 2024'),
@@ -58,7 +58,7 @@ VALUES
     ('Nola Bartlett','Xaviera Rich','Kline','Jan 26, 2024'),
     ('September Mclean','Phyllis Cooper','Holcomb','Oct 26, 2023'),
     ('Cameran Velazquez','Odessa Payne','Mcmillan','Jul 26, 2024');
-INSERT INTO branch_manager (first_name,last_name,sur_name,birth_day)
+INSERT INTO Branch_manager (first_name,last_name,sur_name,birth_day)
 VALUES
     ('Maggy Fox','Ginger Small','Hodges','Sep 26, 2024'),
     ('Dominique Cantu','Audrey Brock','Gutierrez','Mar 17, 2024'),

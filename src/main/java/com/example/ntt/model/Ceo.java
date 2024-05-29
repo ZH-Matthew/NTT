@@ -5,6 +5,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.*;
 import java.sql.Date;
+import java.util.UUID;
+
 /**
  * @code
  * CEO model <p>
@@ -16,8 +18,7 @@ import java.sql.Date;
 @AllArgsConstructor
 public class Ceo {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private UUID id;
 
     private String firstName;
 

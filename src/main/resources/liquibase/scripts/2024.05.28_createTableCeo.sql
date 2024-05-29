@@ -1,9 +1,9 @@
 -- liquibase formatted sql
 
 -- changeset mzhitenev:1
-CREATE TABLE ceo
+CREATE TABLE Ceo
 (
-    id          BIGSERIAL PRIMARY KEY,
+    id          UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     first_name   VARCHAR(255),
     last_name    VARCHAR(255),
     sur_name     VARCHAR(255),
@@ -11,7 +11,7 @@ CREATE TABLE ceo
 
 );
 
-INSERT INTO ceo (first_name,last_name,sur_name,birth_day)
+INSERT INTO Ceo (first_name,last_name,sur_name,birth_day)
 VALUES
     ('Illana Camacho','Farrah Meadows','Schneider','Aug 23, 2024'),
     ('Carissa Colon','Sage Shepherd','English','Jan 3, 2024'),
@@ -23,7 +23,7 @@ VALUES
     ('Tatum Charles','Felicia Jensen','Barker','Apr 17, 2024'),
     ('Quon Hunt','Sigourney Meyer','Wolfe','Sep 15, 2023'),
     ('Madaline Nolan','Aimee Robertson','Hobbs','Sep 20, 2023');
-INSERT INTO ceo (first_name,last_name,sur_name,birth_day)
+INSERT INTO Ceo (first_name,last_name,sur_name,birth_day)
 VALUES
     ('Leigh Francis','Madison Morton','Pittman','Jan 13, 2025'),
     ('Basia Morin','Audrey Russo','Bray','Jun 28, 2024'),
@@ -35,7 +35,7 @@ VALUES
     ('Echo Bender','Penelope Hopper','Conley','Aug 20, 2023'),
     ('Emi Gonzales','Alisa Wall','Robinson','Jul 19, 2024'),
     ('Britanni Alvarado','Xena Nash','Ratliff','Jun 23, 2024');
-INSERT INTO ceo (first_name,last_name,sur_name,birth_day)
+INSERT INTO Ceo (first_name,last_name,sur_name,birth_day)
 VALUES
     ('Quynn Conrad','Buffy Santiago','Dillard','Nov 28, 2023'),
     ('Ivy Bright','Amena Mckay','Mooney','Dec 24, 2024'),
@@ -47,7 +47,7 @@ VALUES
     ('Martha Rosario','Olivia Townsend','Huffman','Mar 17, 2025'),
     ('Robin Mcdaniel','Yen Macdonald','Ayala','Apr 17, 2024'),
     ('Yvonne Hart','Bertha Reid','Hale','Apr 27, 2025');
-INSERT INTO ceo (first_name,last_name,sur_name,birth_day)
+INSERT INTO Ceo (first_name,last_name,sur_name,birth_day)
 VALUES
     ('Sara Vance','Evelyn Blankenship','King','Dec 9, 2023'),
     ('Jessica Richards','Dana Freeman','Bell','Feb 15, 2024'),
@@ -59,7 +59,7 @@ VALUES
     ('Grace Mitchell','Dominique Hodge','Robinson','Dec 9, 2023'),
     ('Gillian Hodge','Jessamine Mayer','Curtis','Oct 8, 2024'),
     ('Deborah Shepard','Elizabeth Garcia','Middleton','Oct 2, 2024');
-INSERT INTO ceo (first_name,last_name,sur_name,birth_day)
+INSERT INTO Ceo (first_name,last_name,sur_name,birth_day)
 VALUES
     ('Yetta Mendoza','Lucy Jensen','Swanson','Jan 8, 2025'),
     ('Irma Curry','Denise Spears','Riggs','Jan 13, 2025'),

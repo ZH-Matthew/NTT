@@ -2,7 +2,7 @@ package com.example.ntt.controller;
 
 import com.example.ntt.exceptions.NotFoundException;
 import com.example.ntt.model.Organization;
-import com.example.ntt.service.GeneralServiceImpl;
+import com.example.ntt.service.OrganizationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,12 +23,12 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/organization")
-public class GeneralController {
+public class OrganizationController {
 
     /**
      * Main service
      */
-    private final GeneralServiceImpl service;
+    private final OrganizationService service;
 
     /**
      * <b> Endpoint for getting all organizations </b> <p>
@@ -37,11 +37,7 @@ public class GeneralController {
      */
     @GetMapping("/all")
     public ResponseEntity<Collection<Organization>> getAllOrganization() {
-        List<Organization> allOrganizations = service.getAllOrganizations();
-        if (allOrganizations.isEmpty()) {
-            return ResponseEntity.notFound().build();
-        }
-        return ResponseEntity.ok(allOrganizations);
+        return ResponseEntity.ok(service.getAllOrganizations());
     }
 
     /**

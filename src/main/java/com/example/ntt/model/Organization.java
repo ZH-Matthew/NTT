@@ -1,8 +1,8 @@
 package com.example.ntt.model;
 import jakarta.persistence.*;
 import lombok.*;
-import java.util.ArrayList;
-import java.util.List;
+
+import java.util.*;
 
 /**
  * @code
@@ -17,16 +17,15 @@ import java.util.List;
 public class Organization {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private UUID id;
 
     private String fullNameOrganization;
 
     private String shortNameOrganization;
 
-    private Long inn;
+    private String inn;
 
-    private Long ogrn;
+    private String ogrn;
 
     private String postalAddress;
 
@@ -36,7 +35,7 @@ public class Organization {
     @JoinColumn(name = "ceo_id")
     private Ceo ceo;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true , fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "organization_id")
     private List<BranchOrganization> branchOrganizations = new ArrayList<>();
 

@@ -17,7 +17,7 @@ import java.util.List;
  */
 @Service
 @RequiredArgsConstructor
-public class GeneralServiceImpl implements GeneralService {
+public class OrganizationServiceImpl implements OrganizationService {
 
     /**
      * Organizations repository (main project repository)

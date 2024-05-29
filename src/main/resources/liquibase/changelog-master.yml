@@ -1,10 +1,10 @@
 databaseChangeLog:
   - include:
-      file: liquibase/scripts/branch_manager.sql
+      file: liquibase/scripts/2024.05.28_createTableBranchManager.sql
   - include:
-      file: liquibase/scripts/ceo.sql
+      file: liquibase/scripts/2024.05.28_createTableCeo.sql
   - include:
-      file: liquibase/scripts/organization.sql
+      file: liquibase/scripts/2024.05.28_createTableOrganization.sql
   - include:
-      file: liquibase/scripts/branch_organization.sql
+      file: liquibase/scripts/2024.05.28_createTableBranchOrganization.sql
 

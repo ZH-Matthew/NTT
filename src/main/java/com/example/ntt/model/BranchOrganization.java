@@ -2,6 +2,9 @@ package com.example.ntt.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.UUID;
+
 /**
  * @code
  * Organization branch model <p>
@@ -14,8 +17,7 @@ import lombok.*;
 @AllArgsConstructor
 public class BranchOrganization {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private UUID id;
 
     private String branchName;
 

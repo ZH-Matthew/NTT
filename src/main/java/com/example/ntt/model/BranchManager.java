@@ -7,6 +7,8 @@ import jakarta.persistence.Id;
 import lombok.*;
 
 import java.sql.Date;
+import java.util.UUID;
+
 /**
  * @code
  * Branch manager model <p>
@@ -20,8 +22,7 @@ import java.sql.Date;
 public class BranchManager {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private UUID id;
 
     private String firstName;
 
