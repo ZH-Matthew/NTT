@@ -14,6 +14,7 @@ import java.util.*;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Organization {
 
     @Id

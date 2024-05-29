@@ -28,7 +28,7 @@ import java.util.UUID;
  * Basic methods: <p>
  * 1) Getting a list of all organizations {@link #getAllOrganizations()} <p>
  * 2) Getting organizations by filter {@link #getFilterOrganizations(String, String)} <p>
- * 3) Getting an organization by unique identifier  {@link #(long)}
+ * 3) Getting an organization by unique identifier  {@link #getOrganisationById(String)}
  */
 @Service
 @RequiredArgsConstructor
@@ -49,6 +49,19 @@ public class OrganizationServiceImpl implements OrganizationService {
         return repository.findAll();
     }
 
+
+    /**
+     * The method searches for an organization by column (passed in the request parameter)
+     * and based on the text (passed in the request parameter) <p>
+     * <p>
+     * The method initially checks whether the specified column is in the table,
+     * if so, then this column is used to search for an element containing the passed value.
+     * The Organization list is formed from matching values.
+     * @param column the column in which the search will be carried out
+     * @param filter the word or part of a word that will be searched for
+     * @return list of found organizations
+     * @throws NotFoundException exception thrown if the specified column is not found
+     */
     public List<Organization> getFilterOrganizations(String column, String filter) {
         Set<String> columnName = new HashSet<>();
 
