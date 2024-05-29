@@ -16,11 +16,8 @@ import jakarta.persistence.metamodel.SingularAttribute;
 import lombok.RequiredArgsConstructor;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.springframework.core.type.ClassMetadata;
 import org.springframework.stereotype.Service;
 
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -44,13 +41,27 @@ public class OrganizationServiceImpl implements OrganizationService {
     private final OrganizationRepository repository;
 
     private final SessionFactory sessionFactory;
-//
+
+    @PersistenceContext
+    EntityManager entityManager;
 
     public List<Organization> getAllOrganizations() {
         return repository.findAll();
     }
 
     public List<Organization> getFilterOrganizations(String column, String filter) {
+        Set<String> columnName = new HashSet<>();
+
+        Metamodel metamodel = entityManager.getEntityManagerFactory().getMetamodel();
+        EntityType<Organization> entityType = metamodel.entity(Organization.class);
+        for (SingularAttribute<? super Organization, ?> attr : entityType.getDeclaredSingularAttributes()) {
+            columnName.add(attr.getName());
+        }
+
+        if (!columnName.contains(column)) {
+            throw new NotFoundException("Column" + column + "not found");
+        }
+
 
         List<Organization> org;
 
