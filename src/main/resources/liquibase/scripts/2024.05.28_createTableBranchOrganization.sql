@@ -73,5 +73,11 @@ VALUES
     ('Blandit Nam PC','893-2010 Iaculis St.'),
     ('Vel Corp.','378-1098 Mauris St.');
 
+UPDATE Branch_organization
+SET organization_id = Organization.id
+    FROM Organization;
 
+UPDATE Branch_organization
+SET branch_manager_id = Branch_manager.id
+    FROM Branch_manager;
 

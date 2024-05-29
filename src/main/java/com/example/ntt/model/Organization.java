@@ -35,7 +35,7 @@ public class Organization {
     @JoinColumn(name = "ceo_id")
     private Ceo ceo;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL , fetch = FetchType.LAZY)
     @JoinColumn(name = "organization_id")
     private List<BranchOrganization> branchOrganizations = new ArrayList<>();
 
